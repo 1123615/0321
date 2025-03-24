@@ -4,19 +4,120 @@
     </head>
     <body>
        <h1><center>0321學習重點</center></h1>
-       <p><b><center>這週教了超連結、插入mp3、內嵌地圖與youtube影片、插入(下載)pdf</center></b></p>
+       <p><b><center>這週教了超連結、插入mp3、內嵌地圖與youtube影片、插入(下載)pdf<br>大多數為補充，只有少部分開頭的是上課內容</center></b></p>
        <li>「a href=""」要變成超連結的文字「/a」，這是最基本的，會在原本的視窗開啟連結，可以按前一頁返回原頁面<br>
             ex.「【a href="https://www.ncyu.edu.tw/"】嘉義大學【/a】」=<a href="https://www.ncyu.edu.tw/">嘉義大學</a>
-       </li>
+       </li><br>
       <li>
-        在後面加上「target="_blank"」=會在另一個新分頁開啟連結內容<br>
+        在後面加上「target="_blank"」會在另一個新分頁開啟連結內容<br>
+        若再另外加上「rel="noopener noreferrer"」，可提升網頁的安全性，防止新分頁取得原網站資訊<br>
         ex.「【a href="https://www.ncyu.edu.tw/" target="_blank"】嘉義大學【/a】」=<a href="https://www.ncyu.edu.tw/" target="_blank">嘉義大學</a>
-      </li>
+      </li><br>
       <li>
         若連結是檔案，則可在後面增加「download」，讓使用者下載該檔案(點案該連結不會打開檔案，只會下載到電腦上)<br>
-        ex.「【a href="ncyusong.pdf" target="_blank"】嘉義大學【/a】」=<a href="ncyusong.pdf">嘉義大學校歌歌譜</a>
-      </li>
-      
-      
+        ex.「【a href="ncyusong.pdf" download】嘉義大學校歌歌譜(不要點!!)【/a】」=<a href="ncyusong.pdf">嘉義大學校歌歌譜(不要點!!)</a><br>
+        通常來說這樣點了就可以下載，但因為我還是搞不懂github能不能把pdf傳上網並產生連結，所以這個連結是壞的，<strong>不要點!</strong><br>
+        如果沒有加「download」就是在原版介面開啟該pdf，有再加「target="_blank"」的話就是在新視窗開啟
+      </li><br>
+       <li>
+        在後面加上「style="text-decoration: none; color: ;"」<br>
+        none表示會移除預設的連結底線，若為「underline」則代表會有底線；<br>
+        color代表的是文字的顏色<br>
+        若(在有底線的情況下)再另外加上「text-decoration-color:;」則可更改底線顏色<br>
+        底線也可更改樣式，加上「 text-decoration-style: ;」則可在其填入想要的底線樣式，如「wavy」=波浪款式<br>
+        ex1.「【a href="https://www.ncyu.edu.tw/" target="_blank" style="text-decoration: none; color: red;"】嘉義大學【/a】」=<a href="https://www.ncyu.edu.tw/" style="text-decoration: none; color:red ;">嘉義大學</a><br>
+         ex2.「【a href="https://www.ncyu.edu.tw/" target="_blank" style="text-decoration: underline;text-decoration-color:darkgreen; color: blue;"】嘉義大學【/a】」=<a href="https://www.ncyu.edu.tw/" target="_blank" style="text-decoration: underline;text-decoration-color:red; color: green;">嘉義大學</a>
+         ex3.「【a href="https://www.ncyu.edu.tw/" target="_blank" style="text-decoration: underline;text-decoration-style: wavy;text-decoration-color:darkgreen; color: blue;"】嘉義大學【/a】」=<a href="https://www.ncyu.edu.tw/" target="_blank" style="text-decoration: underline;text-decoration-color:red;text-decoration-style:wavy ; color: green;">嘉義大學</a>
+      </li><br>
+      <li>在後面加上「class="button"」將超連結變成按鈕的形式<br>
+          但須在【a】的程式碼下方再補充【style】更改按鈕樣式，不然顯示出的還會是一般連，style的內容範例如下<br>
+          「【style】<br>
+          .button {<br>
+                    display: inline-block;<br>
+                    padding: 10px 20px;<br>
+                    background-color: green;<br>
+                    color: black;<br>
+                    text-decoration: none;<br>
+                    border-radius: 5px;<br>
+                  }<br>
+          .button:hover {<br>
+                           background-color: darkblue;<br>(鼠標移到按鈕上方變的顏色)
+                        }<br>
+          【/style】」<br>
+      <a href="https://www.ncyu.edu.tw/" class="button">點擊我前往嘉義大學首頁</a>
+<style>
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: green;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .button:hover {
+    background-color: darkgreen;
+  }
+</style>
+        </li><br>
+      <li>
+        在後面加上「class="block-link"」可使一整塊區域都變成超連結<br>
+        但須在【a】的程式碼下方再補充【style】更改按鈕樣式，不然顯示出的還會是一般連，style的內容範例如下<br>
+        「【style】<br>
+          .block-link {<br>
+                    display: block;<br>
+                    padding: 20px;<br>
+                    background-color: lightblue;<br>
+                    text-align: center;<br>
+                    color: black;<br>
+                    text-decoration: none;<br>
+                  }<br>
+          【/style】」<br>
+        <a href="https://www.ncyu.edu.tw/" class="block-link">點擊本區域任意地方均可跳轉到嘉義大學首頁</a>
+<style>
+  .block-link {
+    display: block;
+    padding: 20px;
+    background-color: lightblue;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+  }
+</style>
+      </li><br>
+      <li>
+        此為前一週(照片)與本週(超連結)的集合，在a裡面再加上圖面的插入程式「img src=""」，擇點照片時會跳准到該超連結導引的網站<br>
+        <a href="https://www.ncyu.edu.tw/">
+        <img src="5.jpg" alt="按鈕">
+        </a>
+      </li><br><br>
+      <li>
+        運用「audio controls」「source src="ncyusong.mp3" type="audio/mpeg"」「/audio」可插入附有進度條、暫停開始音量揵的的音頻<br>
+        另外，也可用其他格式，如:ogg、wav
+         <audio controls>
+            <source src="ncyusong.mp3" type="audio/mpeg">
+        </audio>
+      </li><br>
+      <li>
+        在「audio controls」後面加上「autoplay loop hidden」可以使音頻自動並循環播放，且隱藏控制面板(依序的單詞代表依序的選項)<br>
+        另外若還是想要按鈕控制播放與暫停，則再在後面加上「 id=""」<br>
+        並在「/audio」後面寫上「button onclick="document.getElementById('a').play()"」播放音樂「/button」<br>
+        「button onclick="document.getElementById('a').pause()"」暫停音樂「/button」<br>
+        <audio controls autoplay loop hidden id="a">
+            <source src="ncyusong.mp3" type="audio/mpeg" >
+        </audio>
+        <button onclick="document.getElementById('a').play()">播放音樂</button>
+        <button onclick="document.getElementById('a').pause()">暫停音樂</button>
+      </li><br>
+      <li>
+        內嵌地圖步驟:打開google map，分享，嵌入，複製，直接貼上程式碼<br>
+        可更改大小<br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.715062985517!2d120.41892565073191!3d23.54274862434952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ebdfae88ae0d7%3A0x7cf66184cbfb07f3!2z5ZyL56uL5ZiJ576p5aSn5a245rCR6ZuE5qCh5Y2A!5e0!3m2!1szh-TW!2stw!4v1742858625314!5m2!1szh-TW!2stw" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </li><br>
+      <li>
+      內嵌影片步驟:打開youtube，分享，嵌入，複製，直接貼上程式碼<br>
+      可更改大小<br>
+      <iframe width="350" height="250" src="https://www.youtube.com/embed/iQapSoolmjE?si=i_Q8RIlGNFD3ghkP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       </li>
     </body>
 </html>
+
